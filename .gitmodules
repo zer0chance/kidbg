@@ -1,0 +1,8 @@
+[submodule "ext/linenoise"]
+	path = ext/linenoise
+	url = https://github.com/antirez/linenoise
+[submodule "ext/libelfin"]
+	path = ext/libelfin
+	url = https://github.com/TartanLlama/libelfin
+[submodule "libelfin"]
+	branch = fberg
