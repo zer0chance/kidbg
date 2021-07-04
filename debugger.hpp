@@ -1,8 +1,10 @@
 #if !defined(DEBUGGER_HPP)
 #define DEBUGGER_HPP
 
+#include "breakpoint.hpp"
+
+#include <unordered_map>
 #include <iostream>
-#include <string>
 
 #include <sys/ptrace.h>
 #include <sys/types.h>
@@ -15,6 +17,7 @@ public:
     m_prog_name(name), m_pid(pid) {}
 
   void run();
+  void set_breakpoint_at_address(std::intptr_t addr);
 
 private:
   void continue_execution();
@@ -22,6 +25,7 @@ private:
 
   std::string m_prog_name;
   pid_t m_pid;
+  std::unordered_map<std::intptr_t, Breakpoint> m_breakpoints;
 };
 
 #endif

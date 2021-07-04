@@ -4,7 +4,13 @@ project(kiddgb)
 add_compile_options(-std=c++14)
 
 include_directories(ext/libelfin ext/linenoise)
-add_executable(kidbg kidbg.cpp ext/linenoise/linenoise.c)
+add_executable(
+  kidbg
+  kidbg.cpp
+  debugger.cpp
+  breakpoint.cpp
+  ext/linenoise/linenoise.c
+)
 
 add_custom_target(
   libelfin
